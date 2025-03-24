@@ -1,54 +1,80 @@
-# React + TypeScript + Vite
+# Dog Breed Image Analyzer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a React + Redux application that fetches a list of dog breeds from the [Dog CEO API](https://dog.ceo/dog-api/), counts the number of images available for each breed, and displays the top 10 breeds in a pie chart using Recharts.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Fetches all dog breeds from the API
+- Retrieves and counts images for each breed
+- Displays a grid of all the dog breeds and the amount of images they have
+- Displays a pie chart of the top 10 breeds with the most images
+- Containerized with Docker
 
-## Expanding the ESLint configuration
+## 🛠 Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Frontend:** React, Redux Toolkit, TypeScript
+- **API:** Dog CEO API
+- **Charts:** Recharts
+- **Containerization:** Docker
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 📦 Installation & Setup
+
+### 1️⃣ Clone the Repository
+
+```sh
+git clone https://github.com/chisom-coding/woof-woof-project.git
+cd woof-woof-project
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2️⃣ Install Dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```sh
+npm install --legacy-peer-deps
 ```
+
+### 3️⃣ Start the Development Server
+
+```sh
+npm run dev
+```
+
+- The application will be available at `http://localhost:5173`
+
+## 🐳 Running with Docker
+
+### 1️⃣ Build the Docker Image
+
+```sh
+docker-compose build
+```
+
+### 2️⃣ Start the Container
+
+```sh
+docker-compose up -d
+```
+
+- Open `http://localhost:5173` in your browser to view the app.
+
+### 3️⃣ Stop the Container
+
+```sh
+docker-compose down
+```
+
+## 📜 API Endpoints Used
+
+- `GET /breeds/list/all` → Fetches all dog breeds
+- `GET /breed/{breed}/images` → Fetches all images of a breed
+
+## 📝 To-Do
+
+- [ ] Add unit tests
+- [ ] Add Gallary View
+- [ ] Improve UI/UX
+
+---
+
+### 👨‍💻 Author
+
+Developed by **Chisom Oguama** 🚀
